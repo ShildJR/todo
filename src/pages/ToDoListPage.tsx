@@ -1,11 +1,9 @@
-import {Header} from "../components/Header/Header";
 import {Form} from "../components/Form/Form";
 import {ToDoList} from "../components/ToDoList/ToDoList";
 import {ToDo} from "../models/todo-item";
 import {useState} from "react";
 
 export const ToDoListPage = () => {
-    // useState Это  хранилище состояния, может хранить в себе лбые параметры, также дополнительно можно указывать типизацию в <>
     const [todos, setTodos] = useState<ToDo[]>([])
 
     const createNewToDo = (text:string) => {
@@ -38,7 +36,6 @@ export const ToDoListPage = () => {
 
     return (
         <>
-            <Header />
             <Form createNewTodo={createNewToDo} />
             <ToDoList todos={todos} updateToDo={updateToDo} deleteToDo={deleteToDo}/>
         </>
